@@ -7,8 +7,8 @@ Request Payload(Body): NA
 ********* Validations **********
 Status Code : 200
 Status Line : HTTP/1.1 200 OK
-Content Type : text/html; charset=UTF-8
-Server Type :  nginx/1.14.1
+Content Type : application/json;charset=utf-8
+Server Type :  nginx/1.16.0
 Content Encoding : gzip
 Content Length <800
  *********************************************************/
@@ -100,7 +100,7 @@ public class TC001_Get_All_Employees extends TestBase{
 		
 		String contentType = response.header("Content-Type");
 		logger.info("Content type is ==>" + contentType);
-		Assert.assertEquals(contentType, "text/html; charset=UTF-8");
+		Assert.assertEquals(contentType, "application/json;charset=utf-8");
 	}
 
 	@Test
@@ -110,7 +110,7 @@ public class TC001_Get_All_Employees extends TestBase{
 		
 		String serverType = response.header("Server");
 		logger.info("Server Type is =>" +serverType); 
-		Assert.assertEquals(serverType, "nginx/1.14.1");
+		Assert.assertEquals(serverType, "nginx/1.16.0");
 	
 	}
 

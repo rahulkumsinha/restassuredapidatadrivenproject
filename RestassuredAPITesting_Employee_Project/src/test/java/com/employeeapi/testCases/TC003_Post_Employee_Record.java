@@ -8,9 +8,8 @@ Request Payload(Body): {"name":"XXXXX","salary":"XXXX","age":"XX"}
 Response Payload(Body) : {"name":"XXXXX","salary":"XXXX","age":"XX"}
 Status Code : 200
 Status Line : HTTP/1.1 200 OK
-Content Type : text/html; charset=UTF-8
-Server Type :  nginx/1.14.1
-Content Encoding : gzip
+Content Type : application/json
+Server Type :  nginx/1.16.0
 **********************************************************/
 
 package com.employeeapi.testCases;
@@ -92,23 +91,16 @@ public class TC003_Post_Employee_Record extends TestBase{
 	void checkContentType()
 	{
 		String contentType = response.header("Content-Type");
-		Assert.assertEquals(contentType, "text/html; charset=UTF-8");
+		Assert.assertEquals(contentType, "application/json");
 	}
 
 	@Test
 	void checkserverType()
 	{
 		String serverType = response.header("Server");
-		Assert.assertEquals(serverType, "nginx/1.14.1");
+		Assert.assertEquals(serverType, "nginx/1.16.0");
 	}
 
-	@Test
-	void checkcontentEncoding()
-	{
-		String contentEncoding = response.header("Content-Encoding");
-		Assert.assertEquals(contentEncoding, "gzip");
-
-	}
 	
 	@AfterClass
 	void tearDown()
